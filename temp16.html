@@ -6,6 +6,13 @@
     <title>Document</title>
     <script>
       let users = [];
+      function home() {
+        let str = `
+            <h2>Welcome!</h2>
+            <button onclick='showLogin()'>Logout</button>
+            `;
+        root.innerHTML = str;
+      }
       function addUser() {
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
@@ -25,15 +32,10 @@
         let password = document.getElementById("password").value;
         for (let i = 0; i < users.length; i++) {
           if (users[i].email == email && users[i].password == password) {
-            let str = `
-            <h2>Welcome!</h2>
-            <button onclick='showLogin()'>Logout</button>
-            `;
-            root.innerHTML = str;
+            home();
             break;
-          }
-          else {
-            msg.innerHTML = "Access Denied"
+          } else {
+            msg.innerHTML = "Access Denied";
           }
         }
       }
@@ -65,6 +67,8 @@
     </script>
   </head>
   <body onload="showLogin()">
+    <h1>HDFC Bank</h1>
+    <hr />
     <div id="root"></div>
   </body>
 </html>
