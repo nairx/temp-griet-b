@@ -6,10 +6,22 @@
     <title>Document</title>
     <script>
       let users = [];
+      let useremail = ""
+      let username = ""
+      let currBalance = 0
       function home() {
         let str = `
-            <h2>Welcome!</h2>
+            <h2>Welcome ${username}</h2>
             <button onclick='showLogin()'>Logout</button>
+            <p><input type="number" id="amount" placeholder="Enter Amount"></p>
+            <p><select id="type">
+               <option value=0>--Select--</option>
+               <option value=1>Deposit</option>
+               <option value=2>Withdraw</option>
+               </select></p>
+               <button>Submit</button>
+               <p>Current Balance: ${currBalance}</p>
+
             `;
         root.innerHTML = str;
       }
@@ -23,6 +35,7 @@
           email: email,
           password: password,
           dob: dob,
+          balance:0
         };
         users.push(user);
         showLogin();
@@ -32,6 +45,9 @@
         let password = document.getElementById("password").value;
         for (let i = 0; i < users.length; i++) {
           if (users[i].email == email && users[i].password == password) {
+            useremail = email
+            username = users[i].name
+            currBalance =  users[i].balance
             home();
             break;
           } else {
@@ -68,7 +84,9 @@
   </head>
   <body onload="showLogin()">
     <h1>HDFC Bank</h1>
-    <hr />
+    <hr>
     <div id="root"></div>
+    <hr>
+    <h3>@Copyright 2005. All rights reserved.</h3>
   </body>
 </html>
