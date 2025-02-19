@@ -47,8 +47,11 @@
         color: white;
         background-color: green;
         font-size: 20px;
-        padding: 10px;
-        border-radius: 20px;
+        padding: 5px;
+        border-radius: 2px;
+        width: 200px;
+        border: none;
+        margin: 5px;
       }
       .leftCaption {
         color: gray;
@@ -73,6 +76,7 @@
         padding: 3px;
       }
     </style>
+    
   </head>
   <body>
     <div class="container">
@@ -114,14 +118,40 @@
           <div><input type="radio" name="gender" /></div>
         </div>
         <div class="radioClass">
-            <div><label> Male</label></div>
-                <div><input type="radio" name="gender" /></div>
+          <div><label> Male</label></div>
+          <div><input type="radio" name="gender" /></div>
         </div>
         <div class="radioClass">
-            <div><label> Custom</label></div>
-            <div><input type="radio" name="gender" /></div>
+          <div><label> Custom</label></div>
+          <div><input type="radio" name="gender" /></div>
         </div>
       </div>
+      <div class="row">
+        <input type="text" placeholder="Mobule number or email address" />
+      </div>
+      <div class="row">
+        <input type="password" placeholder="New password" />
+      </div>
+      <div class="row">
+        <button>Sign Up</button>
+      </div>
     </div>
+    <script>
+        let str = "";
+        for (let i = 1; i <= 31; i++) {
+          str += `<option>${i}</option>`;
+        }
+        day.innerHTML = str;
+        str=""
+        for (let i = 1; i <= 12; i++) {
+          str += `<option>${i}</option>`;
+        }
+        month.innerHTML = str;
+        str=""
+        for (let i = 1905; i <= 2025; i++) {
+          str += `<option>${i}</option>`;
+        }
+        year.innerHTML = str;
+      </script>
   </body>
 </html>
