@@ -76,10 +76,17 @@
         padding: 3px;
       }
     </style>
-    
   </head>
   <body>
-    <div class="container">
+    <div id="root"></div>
+    <script>
+     
+     
+
+
+      const showForm = () => {
+        let str = `
+      <div class="container">
       <div class="row">
         <div class="header">facebook</div>
       </div>
@@ -115,17 +122,27 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Female</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Male</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Custom</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
       </div>
+
+     <div class="row">
+      <select id="prSelect" style="display:none">
+        <option>Select your pronoun</option>
+        <option>She:"Wish her a happy birthday"</option>
+        <option>He:"Wish him a happy birthday"</option>
+        <option>They:"Wish them a happy birthday"</option>
+      </select>
+     </div>
+
       <div class="row">
         <input type="text" placeholder="Mobule number or email address" />
       </div>
@@ -136,22 +153,36 @@
         <button>Sign Up</button>
       </div>
     </div>
-    <script>
-        let str = "";
-        for (let i = 1; i <= 31; i++) {
-          str += `<option>${i}</option>`;
+      `;
+        root.innerHTML = str;
+      };
+   
+   showForm();
+      let str = "";
+      for (let i = 1; i <= 31; i++) {
+        str += `<option>${i}</option>`;
+      }
+      day.innerHTML = str;
+      str = "";
+      for (let i = 1; i <= 12; i++) {
+        str += `<option>${i}</option>`;
+      }
+      month.innerHTML = str;
+      str = "";
+      for (let i = 1905; i <= 2025; i++) {
+        str += `<option>${i}</option>`;
+      }
+      year.innerHTML = str;
+
+      const togglePronoun = () => {
+        let p = document.getElementsByName("gender");
+        if (p[2].checked) {
+          prSelect.style.display = "block";
+        } else {
+          prSelect.style.display = "none";
         }
-        day.innerHTML = str;
-        str=""
-        for (let i = 1; i <= 12; i++) {
-          str += `<option>${i}</option>`;
-        }
-        month.innerHTML = str;
-        str=""
-        for (let i = 1905; i <= 2025; i++) {
-          str += `<option>${i}</option>`;
-        }
-        year.innerHTML = str;
-      </script>
+      };
+
+    </script>
   </body>
 </html>
