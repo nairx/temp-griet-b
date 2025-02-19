@@ -78,15 +78,7 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script>
-     
-     
-
-
-      const showForm = () => {
-        let str = `
-      <div class="container">
+    <div class="container">
       <div class="row">
         <div class="header">facebook</div>
       </div>
@@ -96,9 +88,27 @@
           <div class="caption">It's quick and easy.</div>
         </div>
       </div>
+      <hr>
+    <div id="root"></div>
+    </div>
+    <script>
+      const showData = () => {
+        let firstname = document.getElementById("firstname").value;
+        let surname = document.getElementById("surname").value;
+        let str = `
+        <div>
+          Name:${firstname} ${surname}
+        </div>
+        `;
+        root.innerHTML = str;
+      };
+
+      const showForm = () => {
+        let str = `
+      
       <div class="row">
-        <input type="text" placeholder="Firstname" />
-        <input type="text" placeholder="Surname" />
+        <input type="text" id="firstname" placeholder="Firstname" />
+        <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
@@ -150,14 +160,13 @@
         <input type="password" placeholder="New password" />
       </div>
       <div class="row">
-        <button>Sign Up</button>
+        <button onclick='showData()'>Sign Up</button>
       </div>
-    </div>
       `;
         root.innerHTML = str;
       };
-   
-   showForm();
+
+      showForm();
       let str = "";
       for (let i = 1; i <= 31; i++) {
         str += `<option>${i}</option>`;
@@ -182,7 +191,6 @@
           prSelect.style.display = "none";
         }
       };
-
     </script>
   </body>
 </html>
