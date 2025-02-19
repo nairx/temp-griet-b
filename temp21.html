@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background-color: silver;
+        background-color: #eeeeee;
       }
       .container {
         background-color: white;
@@ -34,8 +34,12 @@
         color: gray;
         text-align: center;
       }
-      input {
+      input,select {
         width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid gray;
       }
       button {
         color: white;
@@ -43,6 +47,11 @@
         font-size: 20px;
         padding: 10px;
         border-radius: 20px;
+      }
+      .leftCaption{
+        color: gray;
+        margin-left: 5px;
+        font-size: 10px;
       }
     </style>
   </head>
@@ -56,6 +65,18 @@
           <div class="title">Create a new account</div>
           <div class="caption">It's quick and easy.</div>
         </div>
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Firstname">
+        <input type="text" placeholder="Surname">
+      </div>
+      <div class="row" style="justify-content: start;">
+        <div class="leftCaption">Date of Birth</div>
+      </div>
+      <div class="row">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select>
       </div>
     </div>
   </body>
