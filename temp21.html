@@ -49,7 +49,7 @@
         font-size: 20px;
         padding: 5px;
         border-radius: 2px;
-        width: 200px;
+        width: 150px;
         border: none;
         margin: 5px;
       }
@@ -92,28 +92,44 @@
       <div id="root"></div>
     </div>
     <script>
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
       const showData = () => {
         let firstname = document.getElementById("firstname").value;
         let surname = document.getElementById("surname").value;
-        let email = document.getElementById("email").value
-        let password = document.getElementById("password").value
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
         let gender = document.getElementsByName("gender");
-        let pronoun = document.getElementById("prSelect").value
-        let day =  document.getElementById("day").value
-        let month =  document.getElementById("month").value
-        let year =  document.getElementById("year").value
-        let dob = `${day}-${month}-${year}`
+        let pronoun = document.getElementById("prSelect").value;
+        let day = document.getElementById("day").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+        let dob = `${day}-${month}-${year}`;
         let g = "";
         if (gender[0].checked) g = "Female";
         if (gender[1].checked) g = "Male";
         if (gender[2].checked) g = pronoun;
         let str = `
-        <div>
+          <h3>Verify your information</h3>
           <p>Name:${firstname} ${surname}</p>
           <p>Email:${email}</p>
           <p>Password:${password}</p>
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
+          <button>Confirm</button>
+          <button>Edit</button>
         </div>
         `;
         root.innerHTML = str;
@@ -184,18 +200,22 @@
 
       showForm();
       let str = "";
+      let dt = new Date()
+      let d = dt.getDate()
+      let m = dt.getMonth()
+      let y = dt.getFullYear()
       for (let i = 1; i <= 31; i++) {
-        str += `<option>${i}</option>`;
+        str += `<option ${i === d && "selected"}>${i}</option>`;
       }
       day.innerHTML = str;
       str = "";
-      for (let i = 1; i <= 12; i++) {
-        str += `<option>${i}</option>`;
+      for (let i = 0; i <= 11; i++) {
+        str += `<option ${i === m && "selected"}>${months[i]}</option>`;
       }
       month.innerHTML = str;
       str = "";
       for (let i = 1905; i <= 2025; i++) {
-        str += `<option>${i}</option>`;
+        str += `<option ${i === y && "selected"}>${i}</option>`;
       }
       year.innerHTML = str;
 
