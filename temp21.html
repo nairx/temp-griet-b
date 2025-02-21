@@ -116,9 +116,9 @@
       let yy;
       let pronoun = "NA";
       let g = "";
-      let movies;
-      let music;
-      let sports;
+      let movies=false
+      let music=false
+      let sports=false
       const showData = () => {
         firstname = document.getElementById("firstname").value;
         surname = document.getElementById("surname").value;
@@ -241,15 +241,15 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Movies</label></div>
-          <div><input type="checkbox" id='movies'/></div>
+          <div><input type="checkbox" ${movies && "checked"} id='movies'/></div>
         </div>
         <div class="radioClass">
           <div><label> Music</label></div>
-          <div><input type="checkbox" id='music'/></div>
+          <div><input type="checkbox" ${music && "checked"} id='music'/></div>
         </div>
         <div class="radioClass">
           <div><label>Sports</label></div>
-          <div><input type="checkbox" id='sports' /></div>
+          <div><input type="checkbox" ${sports && "checked"} id='sports' /></div>
         </div>
       </div>
 
