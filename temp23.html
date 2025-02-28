@@ -10,6 +10,15 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .card {
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        /* transform: scale(1.2); */
+        transform:translateY(-10px)
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -30,8 +39,7 @@
             <h1>Frontend Developer</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores dolor minus placeat mollitia magni tempora. Quaerat,
-              autem provident. Dicta accusantium temporibus voluptates sunt
+              provident. Dicta accusantium temporibus voluptates sunt
               numquam quam doloribus blanditiis dolorem? Accusantium, porro!
             </p>
             <button class="btn btn-outline-success">Download Resume</button>
@@ -46,24 +54,24 @@
 
       <div class="row pt-5 pb-5 bg-warning text-center">
         <h1>Key Skills</h1>
-        <div class="col-lg-4">
-          <div class="bg-light w-50 m-5 p-5 text-center rounded-circle">
+        <div class="col-lg-4 text-center">
+          <div class="bg-light fs-2 m-5 p-5 rounded-circle">
             HTML
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="bg-light w-50 m-5 p-5 text-center rounded-circle">
+        <div class="col-lg-4 text-center">
+          <div class="bg-light fs-2  m-5 p-5 rounded-circle">
             CSS
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="bg-light w-50 m-5 p-5 text-center rounded-circle">
+        <div class="col-lg-4 text-center">
+          <div class="bg-light fs-2 m-5 p-5 rounded-circle">
             JavaScript
           </div>
         </div>
       </div>
 
-      <div class="row pt-5 pb-5 ">
+      <div class="row pt-5 pb-5">
         <h1 class="text-center">My Projects</h1>
         <div class="col-lg-4">
           <div class="card m-5">
@@ -110,6 +118,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row bg-secondary p-5 text-light text-center fs-3">
+        <div>@Copyright 2025. All rights reserved.</div>
       </div>
     </div>
 
